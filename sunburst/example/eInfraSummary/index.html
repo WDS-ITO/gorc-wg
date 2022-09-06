@@ -10,6 +10,11 @@
     .sunburst-viz .tooltip{
       white-space: normal !important;
     }
+    
+    .sunburst-viz .tooltip{
+      display: block !important;
+      white-space: normal !important;
+    }
   </style>
   
 </head>
@@ -564,6 +569,7 @@
       .size('size')
       .color('color')
       .radiusScaleExponent(0.5)
+      .labelOrientation(angular)
       (document.getElementById('chart'));
   </script>
 </body>
