@@ -34,7 +34,7 @@
 
 .sunburst-viz .tooltip {
   max-width: 320px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .sunburst-viz .tooltip-title {
