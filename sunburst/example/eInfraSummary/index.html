@@ -3,10 +3,15 @@
   <meta http-equiv='expires' content='0'> 
   <meta http-equiv='pragma' content='no-cache'>
   
-  <!--<script src="//unpkg.com/sunburst-chart"></script>-->
-  <script src="../../src/sunburst-chart.js"></script>
+  <script src="//unpkg.com/sunburst-chart"></script>
+  <!--<script src="../../src/sunburst-chart.js"></script>-->
 
   <style>body { margin: 0 }</style>
+  <style>
+    .sunburst-viz .tooltip{
+      white-space: normal !important;
+    }
+  </style>
 </head>
 <body>
   <div id="chart"></div>
@@ -558,7 +563,7 @@
       .data(data)
       .size('size')
       .color('color')
-      .radiusScaleExponent(1)
+      .radiusScaleExponent(0.5)
       (document.getElementById('chart'));
   </script>
 </body>
