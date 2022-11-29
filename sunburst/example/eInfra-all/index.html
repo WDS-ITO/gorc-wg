@@ -1,11 +1,33 @@
 <head>
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  
   <script src="//unpkg.com/sunburst-chart"></script>
-  <!--<script src="../../dist/sunburst-chart.js"></script>-->
 
   <style>body { margin: 0 }</style>
+  <style>
+    .sunburst-viz .tooltip{
+      white-space: normal !important;
+    }
+    
+    .sunburst-viz text{
+      display: block !important;
+      white-space: normal !important;
+      font-size: small !important;
+    }
+    
+    .sunburst-viz .text-contour{
+      stroke-width: 3 !important;
+    }
+  </style>
+  
 </head>
 <body>
-  <div id="chart"></div>
+  <figure>
+    <div id="chart"></div>
+    <figcaption> An interactive summary of eInfra designations (or <a href="https://wiki.eoscfuture.eu/display/PUBLIC/B.+v4.00+EOSC+Resource+Profile">EOSC Resource categories</a>), showcasing which subcategories, categories, and supercategories the commons in the <a href="https://www.rd-alliance.org/groups/gorc-international-model-wg">RDA GORC-WG</a> speakers series identified with in broad strokes. The centre ring shows the eInfra supercategories, then categories, then groupings by commons identification. These groupings are by subcategories that do not describe any of the speaker series commons (0%), that describe some of the speaker series commons (greater than 0% and less than or equal to 50%), that describe most of the speaker series commons (greater than 50% but less than 100%), or all of the speaker series commons (100%). Subcategories that describe most or all of the speaker series commons are explicitly shown in the outmost layer. Clicking any segment of the graphic will recentre it on that segment, allowing full exploration of how commons identified with the EOSC Resource categories. </figcaption>
+  </figure>
 
   <script>
     const data = {
@@ -13,1447 +35,555 @@
       color: 'white',
       children: [{
         name: 'Access Physical & e-Infrastructures',
-        color: 'magenta',
+        color: '#0f2f57',
         children: [{
           name: 'Instrument & Equipment',
-          color: 'magenta',
+          color: '#0f2f57',
           children: [{
-            name: 'No Commons',
-            color: 'magenta',
-            children: [{
-              name: 'Other',
-              color: 'magenta',
-              size: 1
-            }]
+            name: 'No Commons, 1',
+            color: '#d5e2ff',
+            size: 1
           }, {
-            name: 'Some Commons',
-            color: 'magenta',
-            children: [{
-              name: 'Spectrometer',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Radiation',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Microscopy',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Laser',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Geophysical',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Chromatographer',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Cytometer',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Spectrophotometer',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Digitilisation Equipment',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Monument Maintenaince Equipment',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'TBC',
-              color: 'magenta',
-              size: 1
-            }]
+            name: 'Some Commons, 11',
+            color: '#92a1c4',
+            size: 11
           }, {
             name: 'Most Commons',
-            color: 'magenta',
+            color: '#52658c',
             size: 0
           }, {
             name: 'All Commons',
-            color: 'magenta',
+            color: '#0f2f57',
             size: 0
           }]
         }, {
           name: 'Material Storage',
-          color: 'magenta',
+          color: '#0f2f57',
           children: [{
-            name: 'No Commons',
-            color: 'magenta',
-            children: [{
-            name: 'Other',
-            color: 'magenta',
+            name: 'No Commons, 1',
+            color: '#d5e2ff',
             size: 1
-            }]
           }, {
-            name: 'Some Commons',
-            color: 'magenta',
-            children: [{
-            name: 'Warehousing',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Fulfilment',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Assembly',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Sorting',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Re-working',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Packaging',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Quality Inspecting',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Archiving',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Disposal',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Repository',
-            color: 'magenta',
-            size: 1
-            }, {
-            name: 'Preservation',
-            color: 'magenta',
-            size: 1
-            }]
+            name: 'Some Commons, 11',
+            color: '#92a1c4',
+            size: 11
           }, {
             name: 'Most Commons',
-            color: 'magenta',
+            color: '#52658c',
             size: 0
           }, {
             name: 'All Commons',
-            color: 'magenta',
+            color: '#0f2f57',
             size: 0
           }]
         }, {
           name: 'Network',
-          color: 'magenta',
+          color: '#0f2f57',
           children: [{
-            name: 'No Commons',
-            color: 'magenta',
-            children: [{
-              name: 'Content Delivery Network',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'Traffic Manager',
-              color: 'magenta',
-              size: 1
-            }]
+            name: 'No Commons, 1',
+            color: '#d5e2ff',
+            size: 1
           }, {
-            name: 'Some Commons',
-            color: 'magenta',
-            children: [{
-              name: 'Direct Connect',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'Virtual Network',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'Load Balancer',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'VPN Gateway',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'Exchange',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'magenta',
-              children: [{
-                name: 'Dynamic DNS Service',
-                color: 'magenta',
-                size: 1
-              }]
-            }]
+            name: 'Some Commons, 7',
+            color: '#92a1c4',
+            size: 7
           }, {
             name: 'Most Commons',
-            color: 'magenta',
+            color: '#52658c',
             size: 0
           }, {
             name: 'All Commons',
-            color: 'magenta',
+            color: '#0f2f57',
             size: 0
           }]
         }, {
           name: 'Compute',
-          color: 'magenta',
+          color: '#0f2f57',
           children: [{
             name: 'No Commons',
-            color: 'magenta',
+            color: '#d5e2ff',
             size: 0
           }, {
-            name: 'Some Commons',
-            color: 'magenta',
-            children: [{
-              name: 'Virtual Machine Management',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Container Management',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Workload Management',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Serverless Applications Repository',
-              color: 'magenta',
-              size: 1
-            }, {
-              name: 'Other',
-              color: 'magenta',
-              children: [{
-                name: 'Cybersecurity software cloud',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Turn-key workflows',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Customized image processing',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Cloud infrastructure (compute+storage)',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Domain-specific cyberinfrastructure',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Training facility for Machine Learning, Artificial Intelligencem and Data Learning',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'High-throughput computing',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'High security computing',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Cloud orchestrator',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Domain-specific classification algorithms',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Benchmarks with Machine Learning and Artificial Intelligence',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Software distribution service',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'Data management service',
-                color: 'magenta',
-                size: 1/14
-              }, {
-                name: 'HPC',
-                color: 'magenta',
-                size: 1/14
-              }]
-            }]
+            name: 'Some Commons, 5',
+            color: '#92a1c4',
+            size: 5
           }, {
-            name: 'Most Commons',
-            color: 'magenta',
+            name: 'Most Commons, 2',
+            color: '#52658c',
             children: [{
               name: 'Job execution',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
             }, {
               name: 'Orchestration',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
             }]
           }, {
             name: 'All Commons',
-            color: 'magenta',
+            color: '#0f2f57',
             size: 0
           }]
         }, {
           name: 'Data Storage',
-          color: 'magenta',
+          color: '#0f2f57',
           children: [{
-            name: 'No Commons',
-            color: 'magenta',
-            children: [{
-              name: 'TBC',
-              color: 'magenta',
-              size: 1
-            }]
+            name: 'No Commons, 2',
+            color: '#d5e2ff',
+            size: 2
           }, {
-            name: 'Some Commons',
-            color: 'magenta',
-            children: [{
-              name: 'Queue',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'Replicated',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'Recovery',
-              color: 'magenta',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'magenta',
-              children: [{
-                name: 'Online Storage and sharing',
-                color: 'magenta',
-                size: 1
-              }]
-            }]
+            name: 'Some Commons, 3',
+            color: '#92a1c4',
+            size: 3
           }, {
-            name: 'Most Commons',
-            color: 'magenta',
+            name: 'Most Commons, 8',
+            color: '#52658c',
             children: [{
               name: 'Data',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
               }, {
               name: 'File',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
               }, {
               name: 'Disk',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
               }, {
               name: 'Online',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
               }, {
               name: 'Archive',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
               }, {
               name: 'Backup',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
               }, {
               name: 'Synchronized',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
               }, {
               name: 'Digital Preservation',
-              color: 'magenta',
+              color: '#52658c',
               size: 1
             }]
           }, {
             name: 'All Commons',
-            color: 'magenta',
+            color: '#0f2f57',
             size: 0
           }]
         }]
       }, {
         name: 'Sharing & Discovery',
-        color: 'yellow',
+        color: '#493971',
         children: [{
           name: 'Data',
-          color: 'yellow',
+          color: '#493971',
           children: [{
             name: 'No Commons',
-            color: 'yellow',
+            color: '#eadcff',
             size: 0
             }, {
-            name: 'Some Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Government & Agency Data',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Statistical Data',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Online Service Data',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Clinical Trial Data',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Epidemiological Data',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'yellow',
-              children: [{
-                name: 'Search and compare platform',
-                color: 'yellow',
-                size: 1/6
-                }, {
-                name: 'Survey Questionnaires',
-                color: 'yellow',
-                size: 1/6
-                }, {
-                name: 'Data repository',
-                color: 'yellow',
-                size: 1/6
-                }, {
-                name: 'Geospatial user feedback',
-                color: 'yellow',
-                size: 1/6
-                }, {
-                name: 'High security cloud',
-                color: 'yellow',
-                size: 1/6
-                }, {
-                name: 'Metadata dissemination system',
-                color: 'yellow',
-                size: 1/6
-              }]
-            }]
+            name: 'Some Commons, 6',
+            color: '#b2a2ce',
+            size: 6
             }, {
-            name: 'Most Commons',
-            color: 'yellow',
+            name: 'Most Commons, 2',
+            color: '#7d6b9e',
             children: [{
               name: 'Scientific/Research Data',
-              color: 'yellow',
+              color: '#7d6b9e',
               size: 1
               }, {
               name: 'Data Archives',
-              color: 'yellow',
+              color: '#7d6b9e',
               size: 1
             }]
             }, {
             name: 'All Commons',
-            color: 'yellow',
+            color: '#493971',
             size: 0
           }]
           }, {
           name: 'Scholarly Communication',
-          color: 'yellow',
+          color: '#493971',
           children: [{
-            name: 'No Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Assessment',
-              color: 'yellow',
-              size: 1
-            }]
+            name: 'No Commons, 0',
+            color: '#eadcff',
+            size: 0
             }, {
-            name: 'Some Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Discovery',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Analysis',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Writing',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Outreach',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'yellow',
-              children: [{
-                name: 'Discovery Platform',
-                color: 'yellow',
-                size: 1
-              }]
-            }]
+            name: 'Some Commons, 7',
+            color: '#b2a2ce',
+            size: 7
             }, {
-            name: 'Most Commons',
-            color: 'yellow',
+            name: 'Most Commons, 1',
+            color: '#7d6b9e',
             children: [{
               name: 'Publication',
-              color: 'yellow',
+              color: '#7d6b9e',
               size: 1
             }]
             }, {
             name: 'All Commons',
-            color: 'yellow',
+            color: '#493971',
             size: 0
           }]
           }, {
           name: 'Software',
-          color: 'yellow',
+          color: '#493971',
           children: [{
-            name: 'No Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Libraries',
-              color: 'yellow',
-              size: 1
-            }]
+            name: 'No Commons, 1',
+            color: '#eadcff',
+            size: 1
             }, {
-            name: 'Some Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Software Repository',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Software Package',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'yellow',
-              children: [{
-                name: 'Data Repository',
-                color: 'yellow',
-                size: 1
-              }]
-            }]
+            name: 'Some Commons, 3',
+            color: '#b2a2ce',
+            size: 3
             }, {
-            name: 'Most Commons',
-            color: 'yellow',
+            name: 'Most Commons, 1',
+            color: '#7d6b9e',
             children: [{
               name: 'Platform',
-              color: 'yellow',
+              color: '#7d6b9e',
               size: 1
             }]
             }, {
             name: 'All Commons',
-            color: 'yellow',
+            color: '#493971',
             size: 0
           }]
           }, {
           name: 'Applications',
-          color: 'yellow',
+          color: '#493971',
           children: [{
-            name: 'No Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Business',
-              color: 'yellow',
-              size: 1
-            }]
+            name: 'No Commons, 1',
+            color: '#eadcff',
+            size: 1
             }, {
-            name: 'Some Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Communication',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Collaboration',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Productivity',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Education',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Social/Networking',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Utilities',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Applications Repository',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'yellow',
-              children: [{
-                name: 'RDM and implementation of DMPs',
-                color: 'yellow',
-                size: 1
-              }]
-            }]
+            name: 'Some Commons, 8',
+            color: '#b2a2ce',
+            size: 8
             }, {
             name: 'Most Commons',
-            color: 'yellow',
+            color: '#7d6b9e',
             size: 0
             }, {
             name: 'All Commons',
-            color: 'yellow',
+            color: '#493971',
             size: 0
           }]
           }, {
           name: 'Development Resources',
-          color: 'yellow',
+          color: '#493971',
           children: [{
-            name: 'No Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Software Development Kits',
-              color: 'yellow',
-              size: 1
-            }]
+            name: 'No Commons, 1',
+            color: '#eadcff',
+            size: 1
             }, {
-            name: 'Some Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Developer Tools',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Software Libraries',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'APIs Repository / Gateway',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'yellow',
-              children: [{
-                name: 'Service Portfolio Management',
-                color: 'yellow',
-                size: 1
-              }]
-            }]
+            name: 'Some Commons, 4',
+            color: '#b2a2ce',
+            size: 4
             }, {
             name: 'Most Commons',
-            color: 'yellow',
+            color: '#7d6b9e',
             size: 0
             }, {
             name: 'All Commons',
-            color: 'yellow',
+            color: '#493971',
             size: 0
           }]
           }, {
           name: 'Samples Collection',
-          color: 'yellow',
+          color: '#493971',
           children: [{
-            name: 'No Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Other',
-              color: 'yellow',
-              size: 1
-            }]
+            name: 'No Commons, 1',
+            color: '#eadcff',
+            size: 1
             }, {
-            name: 'Some Commons',
-            color: 'yellow',
-            children: [{
-              name: 'Biological Samples',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Chemical Compounds library',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Preparation',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'Characterization',
-              color: 'yellow',
-              size: 1
-              }, {
-              name: 'TBD',
-              color: 'yellow',
-              size: 1
-            }]
+            name: 'Some Commons, 5',
+            color: '#b2a2ce',
+            size: 5
             }, {
             name: 'Most Commons',
-            color: 'yellow',
+            color: '#7d6b9e',
             size: 0
             }, {
             name: 'All Commons',
-            color: 'yellow',
+            color: '#493971',
             size: 0
           }]
         }]
       }, {
         name: 'Processing & Analysis',
-        color: 'cyan',
+        color: '#823e7c',
         children: [{
           name: 'Data Management',
-          color: 'cyan',
+          color: '#823e7c',
           children: [{
-            name: 'No Commons',
-            color: 'cyan',
-            children: [{
-              name: 'TBC',
-              color: 'cyan',
-              size: 1
-            }]
+            name: 'No Commons, 1',
+            color: '#fbd8f6',
+            size: 1
             }, {
-            name: 'Some Commons',
-            color: 'cyan',
-            children: [{
-              name: 'Mining',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Anonymisation',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Brokering',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Annotation',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Validation',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Maintenaince',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Embargo',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Digitization',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'cyan',
-              children: [{
-                name: 'Interoperability',
-                color: 'cyan',
-                size: 1/2
-                }, {
-                name: 'Service Portfolio Management',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'RDM and DMP support',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Data collections catelog',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Data services',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Data service portal',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Registration service',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'APIs and data discovery',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'All-in-one repositories',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Multi-cloud devops PaaS',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Visual data analytics',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Interoperability Platform',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Domain-specific data repositories',
-                color: 'cyan',
-                size: 1/30
-                }, {
-                name: 'Digital infrastructure',
-                color: 'cyan',
-                size: 1/30
-              }]
-            }]
+            name: 'Some Commons, 9',
+            color: '#d2a3cc',
+            size: 9
             }, {
-            name: 'Most Commons',
-            color: 'cyan',
+            name: 'Most Commons, 5',
+            color: '#aa70a3',
             children: [{
               name: 'Transfer',
-              color: 'cyan',
+              color: '#aa70a3',
               size: 1
               }, {
               name: 'Registration',
-              color: 'cyan',
+              color: '#aa70a3',
               size: 1
               }, {
               name: 'Persistent Identifier',
-              color: 'cyan',
+              color: '#aa70a3',
               size: 1
               }, {
               name: 'Interlinking',
-              color: 'cyan',
+              color: '#aa70a3',
               size: 1
               }, {
               name: 'Preservation',
-              color: 'cyan',
+              color: '#aa70a3',
               size: 1
             }]
             }, {
-            name: 'All Commons',
-            color: 'cyan',
+            name: 'All Commons, 3',
+            color: '#823e7c',
             children: [{
               name: 'Access',
-              color: 'cyan',
+              color: '#823e7c',
               size: 1
               }, {
               name: 'Publishing',
-              color: 'cyan',
+              color: '#823e7c',
               size: 1
               }, {
               name: 'Discovery',
-              color: 'cyan',
+              color: '#823e7c',
               size: 1
             }]
           }]
           }, {
           name: 'Data Analysis',
-          color: 'cyan',
+          color: '#823e7c',
           children: [{
-            name: 'No Commons',
-            color: 'cyan',
-            children: [{
-              name: 'Data extrapolation',
-              color: 'cyan',
-              size: 1
-            }]
+            name: 'No Commons, 1',
+            color: '#fbd8f6',
+            size: 1
             }, {
-            name: 'Some Commons',
-            color: 'cyan',
-            children: [{
-              name: 'Machine Learning',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Artificial Intelligence',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Forecast',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Visualization',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Image/data analysis',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: '2D/3D Digitisation',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'cyan',
-              children: [{
-                name: 'Service portfolio management',
-                color: 'cyan',
-                size: 1/9
-                }, {
-                name: 'Domain-specific analysis cloud platforms',
-                color: 'cyan',
-                size: 1/9
-                }, {
-                name: 'Access portal',
-                color: 'cyan',
-                size: 1/9
-                }, {
-                name: 'Cloud computing top layer',
-                color: 'cyan',
-                size: 1/9
-                }, {
-                name: 'Interoperability platform',
-                color: 'cyan',
-                size: 1/9
-                }, {
-                name: 'Comparison platform',
-                color: 'cyan',
-                size: 1/9
-                }, {
-                name: 'Interlinking data and Literature service',
-                color: 'cyan',
-                size: 1/9
-                }, {
-                name: 'Service comparison',
-                color: 'cyan',
-                size: 1/9
-                }, {
-                name: 'File Conversion Service',
-                color: 'cyan',
-                size: 1/9
-              }]
-            }]
+            name: 'Some Commons, 7',
+            color: '#d2a3cc',
+            size: 7
             }, {
             name: 'Most Commons',
-            color: 'cyan',
+            color: '#aa70a3',
             size: 0
             }, {
-            name: 'All Commons',
-            color: 'cyan',
+            name: 'All Commons, 1',
+            color: '#823e7c',
             children: [{
               name: 'Workflows',
-              color: 'cyan',
+              color: '#823e7c',
               size: 1
             }]
           }]
           }, {
           name: 'Measurement and Materials',
-          color: 'cyan',
+          color: '#823e7c',
           children: [{
-            name: 'No Commons',
-            color: 'cyan',
-            children: [{
-              name: 'Analysis',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Maintenaince and Modification',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Production',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Testing and Validation',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Characterization',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Validation',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Workflows',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'TBC',
-              color: 'cyan',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'cyan',
-              size: 1
-            }]
+            name: 'No Commons, 9',
+            color: '#fbd8f6',
+            size: 9
             }, {
             name: 'Some Commons',
-            color: 'cyan',
+            color: '#d2a3cc',
             size: 0
             }, {
             name: 'Most Commons',
-            color: 'cyan',
+            color: '#aa70a3',
             size: 0
             }, {
             name: 'All Commons',
-            color: 'cyan',
+            color: '#823e7c',
             size: 0
           }]
         }]
       }, {
         name: 'Security & Operations',
-        color: 'green',
+        color: '#b74176',
         children: [{
           name: 'Security and Identity',
-          color: 'green',
+          color: '#b74176',
           children: [{
             name: 'No Commons',
-            color: 'green',
+            color: '#ffd5e6',
             size: 0
             }, {
-            name: 'Some Commons',
-            color: 'green',
-            children: [{
-              name: 'User Authentication',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Threat Protection',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Coordination',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Tools',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Certification Authority',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Single Sign-On',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Firewall',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Group Management',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'green',
-              children: [{
-                name: 'Bot defence for websites and web services',
-                color: 'green',
-                size: 1/2
-                }, {
-                name: 'Protection of security data',
-                color: 'green',
-                size: 1/2
-              }]
-            }]
+            name: 'Some Commons, 9',
+            color: '#e8a5c0',
+            size: 9
             }, {
-            name: 'Most Commons',
-            color: 'green',
+            name: 'Most Commons, 1',
+            color: '#d1749b',
             children: [{
               name: 'Identity & Access management',
-              color: 'green',
+              color: '#d1749b',
               size: 1
             }]
             }, {
             name: 'All Commons',
-            color: 'green',
+            color: '#b74176',
             size: 0
           }]
           }, {
           name: 'Operations & Infrastructure Management Services',
-          color: 'green',
+          color: '#b74176',
           children: [{
-            name: 'No Commons',
-            color: 'green',
-            children: [{
-              name: 'Order Management',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Transportation',
-              color: 'green',
-              size: 1
-            }]
-            }, {
-            name: 'Some Commons',
-            color: 'green',
-            children: [{
-              name: 'Accounting',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Helpdesk',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Monitoring',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Analysis',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Configuration',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Utilities',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Coordination',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Billing',
-              color: 'green',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'green',
-              children: [{
-                name: 'Research Infrastructure Cloud',
-                color: 'green',
-                size: 1
-              }]
-            }]
-            }, {
-            name: 'Most Commons',
-            color: 'green',
+            name: 'No Commons, 0',
+            color: '#ffd5e6',
             size: 0
             }, {
+            name: 'Some Commons, 8',
+            color: '#e8a5c0',
+            size: 8
+            }, {
+            name: 'Most Commons, 3',
+            color: '#d1749b',
+            children: [{
+              name: 'Monitoring',
+              color: '#d1749b',
+              size: 1
+            }, {
+              name: 'Configuration',
+              color: '#d1749b',
+              size: 1
+            }, {
+              name: 'Coordination',
+              color: '#d1749b',
+              size: 1
+            }]
+            }, {
             name: 'All Commons',
-            color: 'green',
+            color: '#b74176',
             size: 0
           }]
         }]
       }, {
         name: 'Training & Support',
-        color: 'red',
+        color: '#e15163',
         children: [{
           name: 'Education & Training',
-          color: 'red',
+          color: '#e15163',
           children: [{
             name: 'No Commons',
-            color: 'red',
+            color: '#ffd5d6',
             size: 0
             }, {
-            name: 'Some Commons',
-            color: 'red',
+            name: 'Some Commons, 5',
+            color: '#f9abae',
+            size: 5
+            }, {
+            name: 'Most Commons, 1',
+            color: '#ef8088',
             children: [{
               name: 'Online Courses',
-              color: 'red',
+              color: '#ef8088',
               size: 1
-              }, {
-              name: 'Open Registration Courses',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'In-house courses',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Training Tool',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Training Platform',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'red',
-              children: [{
-                name: 'Training Catelog',
-                color: 'red',
-                size: 1/3
-                }, {
-                name: 'Guides',
-                color: 'red',
-                size: 1/3
-                }, {
-                name: 'Events Catelog',
-                color: 'red',
-                size: 1/3
-              }]
             }]
             }, {
-            name: 'Most Commons',
-            color: 'red',
-            size: 0
-            }, {
             name: 'All Commons',
-            color: 'red',
+            color: '#e15163',
             size: 0
           }]
           }, {
           name: 'Consultancy & Support',
-          color: 'red',
+          color: '#e15163',
           children: [{
-            name: 'No Commons',
-            color: 'red',
-            children: [{
-              name: 'Application Scaling',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Application Optimization',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Modeling and Simulation',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Certification',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Calibration',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Benchmarking',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Methodology Development',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'red',
-              size: 1
-            }]
+            name: 'No Commons, 8',
+            color: '#ffd5d6',
+            size: 8
             }, {
-            name: 'Some Commons',
-            color: 'red',
-            children: [{
-              name: 'Consulting',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Audit & Assessment',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Application Porting',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Software Development',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Software Improvement',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Prototype Development',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Testing',
-              color: 'red',
-              size: 1
-              }, {
-              name: 'Technology Transfer',
-              color: 'red',
-              size: 1
-            }]
+            name: 'Some Commons, 8',
+            color: '#f9abae',
+            size: 8
             }, {
             name: 'Most Commons',
-            color: 'red',
+            color: '#ef8088',
             size: 0
             }, {
             name: 'All Commons',
-            color: 'red',
+            color: '#e15163',
             size: 0
           }]
         }]
       }, {
         name: 'Aggregators & Integrators',
-        color: 'orange',
+        color: '#f97245',
         children: [{
           name: 'Aggregators & Integrators',
-          color: 'orange',
+          color: '#f97245',
           children: [{
             name: 'No Commons',
-            color: 'orange',
+            color: '#ffd8c8',
             size: 0
             }, {
-            name: 'Some Commons',
-            color: 'orange',
-            children: [{
-              name: 'Services',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Services & Applications',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Services & Software',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Applications & Data',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Applications & Software',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Services & Applications & Data',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Services & Applications & Software',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Data & Applications & Software',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Services & Applications & Software & Data',
-              color: 'orange',
-              size: 1
-              }, {
-              name: 'Other',
-              color: 'orange',
-              children: [{
-                name: 'Data',
-                color: 'orange',
-                size: 2/5
-                }, {
-                name: 'Software',
-                color: 'orange',
-                size: 2/5
-                }, {
-                name: 'Applications',
-                color: 'orange',
-                size: 1/5
-              }]
-            }]
+            name: 'Some Commons, 12',
+            color: '#ffb79a',
+            size: 12
             }, {
-            name: 'Most Commons',
-            color: 'orange',
+            name: 'Most Commons, 2',
+            color: '#ff966f',
             children: [{
               name: 'Software & Data',
-              color: 'orange',
+              color: '#ff966f',
               size: 1
               }, {
               name: 'Services & Software & Data',
-              color: 'orange',
+              color: '#ff966f',
               size: 1
             }]
             }, {
-            name: 'All Commons',
-            color: 'orange',
+            name: 'All Commons, 1',
+            color: '#f97245',
             children: [{
               name: 'Services & Data',
-              color: 'orange',
+              color: '#f97245',
               size: 1
             }]
           }]
         }]
       }, {
         name: 'Other',
-        color: 'grey',
+        color: '#fa9d1c',
         children: [{
-          name: 'No Commons',
-            color: 'grey',
+          name: 'Other',
+          color: '#fa9d1c',
+        children: [{
+          name: 'No Commons,1',
+            color: '#fdddbf',
+            size: 1
+            }, {
+            name: 'Some Commons, 0',
+            color: '#ffc78d',
             size: 0
             }, {
-            name: 'Some Commons',
-            color: 'grey',
-            children: [{
-              name: 'Other',
-              color: 'grey',
-              children: [{
-                name: 'Collaboration Marketplace & Legal Contract Service',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'DMPs',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'Software gateway',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'RDM guides',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'Software testing',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'central registry service',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'resolution service',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'Domain-specific research portal',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'Publishing platform',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'Sensitive data collection',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'Analysis',
-                color: 'grey',
-                size: 1/12
-                }, {
-                name: 'Storage Service',
-                color: 'grey',
-                size: 1/12
-              }]
-            }]
-            }, {
             name: 'Most Commons',
-            color: 'grey',
+            color: '#ffb25b',
             size: 0
             }, {
             name: 'All Commons',
-            color: 'grey',
+            color: '#fa9d1c',
             size: 0
+            }]
         }]
       }]
     };
@@ -1462,7 +592,10 @@
       .data(data)
       .size('size')
       .color('color')
-      .radiusScaleExponent(1)
+      .radiusScaleExponent(0.75)
+      .labelOrientation('angular')
+      .excludeRoot('true')
+      .centerRadius('0.25')
       (document.getElementById('chart'));
   </script>
 </body>
