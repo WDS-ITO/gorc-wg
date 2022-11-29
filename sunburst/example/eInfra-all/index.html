@@ -26,7 +26,7 @@
 <body>
   <figure>
     <div id="chart"></div>
-    <figcaption> An interactive summary of eInfra designations (or <a href="https://wiki.eoscfuture.eu/display/PUBLIC/B.+v4.00+EOSC+Resource+Profile">EOSC Resource categories</a>), showcasing which subcategories, categories, and supercategories the commons in the <a href="https://www.rd-alliance.org/groups/gorc-international-model-wg">RDA GORC-WG</a> speakers series identified with in broad strokes. The centre ring shows the eInfra supercategories, then categories, then groupings by commons identification. These groupings are by subcategories that do not describe any of the speaker series commons (0%), that describe some of the speaker series commons (greater than 0% and less than or equal to 50%), that describe most of the speaker series commons (greater than 50% but less than 100%), or all of the speaker series commons (100%). Subcategories that describe most or all of the speaker series commons are explicitly shown in the outmost layer. Clicking any segment of the graphic will recentre it on that segment, allowing full exploration of how commons identified with the EOSC Resource categories. </figcaption>
+    <figcaption> TESTING SITE! PLEASE VISIT THE <a href="https://wds-ito.github.io/gorc-wg.github.io/sunburst/example/eInfraSummary/">SUMMARY GRAPHIC</a> INSTEAD.</figcaption>
   </figure>
 
   <script>
@@ -596,6 +596,7 @@
       .labelOrientation('angular')
       .excludeRoot('true')
       .centerRadius('0.25')
+      .tooltipContent((d, node) => `Size: <i>${node.value}</i>`)
       (document.getElementById('chart'));
   </script>
 </body>
