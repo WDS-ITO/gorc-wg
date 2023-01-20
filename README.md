@@ -11,3 +11,8 @@ Current visualizations:
 <li><a href="https://wds-ito.github.io/gorc-wg.github.io/sunburst/example/eInfraSummary/">Interactive summary of e-Infra categories self-prescribed by or observed in research commons participating in the speaker series.</a></li>
 <li><a href="https://wds-ito.github.io/gorc-wg.github.io//python/TypesOfCommons/">3D representation of the types of commons that have participated in the speaker series.</a></li>
 </ul>
+
+Related resources:
+<ul>
+<li><a href="https://public.tableau.com/app/profile/ito.ra1/viz/RDAMembershipWorldwide_16322486753610/RDAMembershipWorldwide">World Data System members and their participation in the Research Data Alliance (2019).</a></li>
+</ul>
