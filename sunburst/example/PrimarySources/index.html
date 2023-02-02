@@ -1,0 +1,614 @@
+<head>
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  
+  <script src="../sunburst-chart.min.js"></script>
+
+  <style>body { margin: 0 }</style>
+  <style>
+    .sunburst-viz .tooltip{
+      white-space: normal !important;
+    }
+    
+    .sunburst-viz text{
+      display: block !important;
+      white-space: normal !important;
+      font-size: small !important;
+    }
+    
+    .sunburst-viz .text-contour{
+      stroke-width: 3 !important;
+    }
+  </style>
+  
+</head>
+<body>
+  <figure>
+    <div id="chart"></div>
+    <figcaption> An interactive summary of eInfra designations (or <a href="https://wiki.eoscfuture.eu/display/PUBLIC/B.+v4.00+EOSC+Resource+Profile">EOSC Resource categories</a>), showcasing which subcategories, categories, and supercategories the commons in the <a href="https://www.rd-alliance.org/groups/gorc-international-model-wg">RDA GORC-WG</a> speakers series identified with in broad strokes. The centre ring shows the eInfra supercategories, then categories, then groupings by commons identification. These groupings are by subcategories that do not describe any of the speaker series commons (0%), that describe some of the speaker series commons (greater than 0% and less than or equal to 50%), that describe most of the speaker series commons (greater than 50% but less than 100%), or all of the speaker series commons (100%). Subcategories that describe most or all of the speaker series commons are explicitly shown in the outmost layer. Clicking any segment of the graphic will recentre it on that segment, allowing full exploration of how commons identified with the EOSC Resource categories. </figcaption>
+  </figure>
+
+  <script>
+    const data = {
+      name: 'e-Infra categorization system',
+      color: 'white',
+      children: [{
+        name: 'Access Physical & e-Infrastructures',
+        color: '#0f2f57',
+        children: [{
+          name: 'Instrument & Equipment',
+          color: '#0f2f57',
+          children: [{
+            name: 'No Commons',
+            color: '#d5e2ff',
+            size: 1
+          }, {
+            name: 'Some Commons',
+            color: '#92a1c4',
+            size: 11
+          }, {
+            name: 'Most Commons',
+            color: '#52658c',
+            size: 0
+          }, {
+            name: 'All Commons',
+            color: '#0f2f57',
+            size: 0
+          }]
+        }, {
+          name: 'Material Storage',
+          color: '#0f2f57',
+          children: [{
+            name: 'No Commons',
+            color: '#d5e2ff',
+            size: 1
+          }, {
+            name: 'Some Commons',
+            color: '#92a1c4',
+            size: 11
+          }, {
+            name: 'Most Commons',
+            color: '#52658c',
+            size: 0
+          }, {
+            name: 'All Commons',
+            color: '#0f2f57',
+            size: 0
+          }]
+        }, {
+          name: 'Network',
+          color: '#0f2f57',
+          children: [{
+            name: 'No Commons',
+            color: '#d5e2ff',
+            size: 1
+          }, {
+            name: 'Some Commons',
+            color: '#92a1c4',
+            size: 7
+          }, {
+            name: 'Most Commons',
+            color: '#52658c',
+            size: 0
+          }, {
+            name: 'All Commons',
+            color: '#0f2f57',
+            size: 0
+          }]
+        }, {
+          name: 'Compute',
+          color: '#0f2f57',
+          children: [{
+            name: 'No Commons',
+            color: '#d5e2ff',
+            size: 0
+          }, {
+            name: 'Some Commons',
+            color: '#92a1c4',
+            size: 5
+          }, {
+            name: 'Most Commons',
+            color: '#52658c',
+            children: [{
+              name: 'Job execution',
+              color: '#52658c',
+              size: 1
+            }, {
+              name: 'Orchestration',
+              color: '#52658c',
+              size: 1
+            }]
+          }, {
+            name: 'All Commons',
+            color: '#0f2f57',
+            size: 0
+          }]
+        }, {
+          name: 'Data Storage',
+          color: '#0f2f57',
+          children: [{
+            name: 'No Commons',
+            color: '#d5e2ff',
+            size: 2
+          }, {
+            name: 'Some Commons',
+            color: '#92a1c4',
+            size: 3
+          }, {
+            name: 'Most Commons',
+            color: '#52658c',
+            children: [{
+              name: 'Data',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'File',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'Disk',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'Online',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'Archive',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'Backup',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'Synchronized',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'Replicated',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'Recovery',
+              color: '#52658c',
+              size: 1
+              }, {
+              name: 'Digital Preservation',
+              color: '#52658c',
+              size: 1
+            }]
+          }, {
+            name: 'All Commons',
+            color: '#0f2f57',
+            size: 0
+          }]
+        }]
+      }, {
+        name: 'Sharing & Discovery',
+        color: '#493971',
+        children: [{
+          name: 'Data',
+          color: '#493971',
+          children: [{
+            name: 'No Commons',
+            color: '#eadcff',
+            size: 0
+            }, {
+            name: 'Some Commons',
+            color: '#b2a2ce',
+            size: 6
+            }, {
+            name: 'Most Commons',
+            color: '#7d6b9e',
+            children: [{
+              name: 'Scientific/Research Data',
+              color: '#7d6b9e',
+              size: 1
+              }, {
+              name: 'Data Archives',
+              color: '#7d6b9e',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#493971',
+            size: 0
+          }]
+          }, {
+          name: 'Scholarly Communication',
+          color: '#493971',
+          children: [{
+            name: 'No Commons',
+            color: '#eadcff',
+            size: 1
+            }, {
+            name: 'Some Commons',
+            color: '#b2a2ce',
+            size: 6
+            }, {
+            name: 'Most Commons',
+            color: '#7d6b9e',
+            children: [{
+              name: 'Publication',
+              color: '#7d6b9e',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#493971',
+            size: 0
+          }]
+          }, {
+          name: 'Software',
+          color: '#493971',
+          children: [{
+            name: 'No Commons',
+            color: '#eadcff',
+            size: 1
+            }, {
+            name: 'Some Commons',
+            color: '#b2a2ce',
+            size: 3
+            }, {
+            name: 'Most Commons',
+            color: '#7d6b9e',
+            children: [{
+              name: 'Platform',
+              color: '#7d6b9e',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#493971',
+            size: 0
+          }]
+          }, {
+          name: 'Applications',
+          color: '#493971',
+          children: [{
+            name: 'No Commons',
+            color: '#eadcff',
+            size: 1
+            }, {
+            name: 'Some Commons',
+            color: '#b2a2ce',
+            size: 8
+            }, {
+            name: 'Most Commons',
+            color: '#7d6b9e',
+            size: 0
+            }, {
+            name: 'All Commons',
+            color: '#493971',
+            size: 0
+          }]
+          }, {
+          name: 'Development Resources',
+          color: '#493971',
+          children: [{
+            name: 'No Commons',
+            color: '#eadcff',
+            size: 1
+            }, {
+            name: 'Some Commons',
+            color: '#b2a2ce',
+            size: 4
+            }, {
+            name: 'Most Commons',
+            color: '#7d6b9e',
+            size: 0
+            }, {
+            name: 'All Commons',
+            color: '#493971',
+            size: 0
+          }]
+          }, {
+          name: 'Samples Collection',
+          color: '#493971',
+          children: [{
+            name: 'No Commons',
+            color: '#eadcff',
+            size: 1
+            }, {
+            name: 'Some Commons',
+            color: '#b2a2ce',
+            size: 5
+            }, {
+            name: 'Most Commons',
+            color: '#7d6b9e',
+            size: 0
+            }, {
+            name: 'All Commons',
+            color: '#493971',
+            size: 0
+          }]
+        }]
+      }, {
+        name: 'Processing & Analysis',
+        color: '#823e7c',
+        children: [{
+          name: 'Data Management',
+          color: '#823e7c',
+          children: [{
+            name: 'No Commons',
+            color: '#fbd8f6',
+            size: 1
+            }, {
+            name: 'Some Commons',
+            color: '#d2a3cc',
+            size: 9
+            }, {
+            name: 'Most Commons',
+            color: '#aa70a3',
+            children: [{
+              name: 'Transfer',
+              color: '#aa70a3',
+              size: 1
+              }, {
+              name: 'Registration',
+              color: '#aa70a3',
+              size: 1
+              }, {
+              name: 'Persistent Identifier',
+              color: '#aa70a3',
+              size: 1
+              }, {
+              name: 'Interlinking',
+              color: '#aa70a3',
+              size: 1
+              }, {
+              name: 'Preservation',
+              color: '#aa70a3',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#823e7c',
+            children: [{
+              name: 'Access',
+              color: '#823e7c',
+              size: 1
+              }, {
+              name: 'Publishing',
+              color: '#823e7c',
+              size: 1
+              }, {
+              name: 'Discovery',
+              color: '#823e7c',
+              size: 1
+            }]
+          }]
+          }, {
+          name: 'Data Analysis',
+          color: '#823e7c',
+          children: [{
+            name: 'No Commons',
+            color: '#fbd8f6',
+            size: 1
+            }, {
+            name: 'Some Commons',
+            color: '#d2a3cc',
+            size: 6
+            }, {
+            name: 'Most Commons',
+            color: '#aa70a3',
+            children: [{
+              name: 'Image/Data analysis',
+              color: '#aa70a3',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#823e7c',
+            children: [{
+              name: 'Workflows',
+              color: '#823e7c',
+              size: 1
+            }]
+          }]
+          }, {
+          name: 'Measurement and Materials',
+          color: '#823e7c',
+          children: [{
+            name: 'No Commons',
+            color: '#fbd8f6',
+            size: 9
+            }, {
+            name: 'Some Commons',
+            color: '#d2a3cc',
+            size: 0
+            }, {
+            name: 'Most Commons',
+            color: '#aa70a3',
+            size: 0
+            }, {
+            name: 'All Commons',
+            color: '#823e7c',
+            size: 0
+          }]
+        }]
+      }, {
+        name: 'Security & Operations',
+        color: '#b74176',
+        children: [{
+          name: 'Security and Identity',
+          color: '#b74176',
+          children: [{
+            name: 'No Commons',
+            color: '#ffd5e6',
+            size: 0
+            }, {
+            name: 'Some Commons',
+            color: '#e8a5c0',
+            size: 9
+            }, {
+            name: 'Most Commons',
+            color: '#d1749b',
+            children: [{
+              name: 'Identity & Access management',
+              color: '#d1749b',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#b74176',
+            size: 0
+          }]
+          }, {
+          name: 'Operations & Infrastructure Management Services',
+          color: '#b74176',
+          children: [{
+            name: 'No Commons',
+            color: '#ffd5e6',
+            size: 1
+            }, {
+            name: 'Some Commons',
+            color: '#e8a5c0',
+            size: 7
+            }, {
+            name: 'Most Commons',
+            color: '#d1749b',
+            children: [{
+              name: 'Monitoring',
+              color: '#d1749b',
+              size: 1
+            }, {
+              name: 'Configuration',
+              color: '#d1749b',
+              size: 1
+            }, {
+              name: 'Coordination',
+              color: '#d1749b',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#b74176',
+            size: 0
+          }]
+        }]
+      }, {
+        name: 'Training & Support',
+        color: '#e15163',
+        children: [{
+          name: 'Education & Training',
+          color: '#e15163',
+          children: [{
+            name: 'No Commons',
+            color: '#ffd5d6',
+            size: 0
+            }, {
+            name: 'Some Commons',
+            color: '#f9abae',
+            size: 4
+            }, {
+            name: 'Most Commons',
+            color: '#ef8088',
+            children: [{
+              name: 'Online Courses',
+              color: '#ef8088',
+              size: 1
+            }, {
+              name: 'In-house Courses',
+              color: '#ef8088',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#e15163',
+            size: 0
+          }]
+          }, {
+          name: 'Consultancy & Support',
+          color: '#e15163',
+          children: [{
+            name: 'No Commons',
+            color: '#ffd5d6',
+            size: 7
+            }, {
+            name: 'Some Commons',
+            color: '#f9abae',
+            size: 9
+            }, {
+            name: 'Most Commons',
+            color: '#ef8088',
+            size: 0
+            }, {
+            name: 'All Commons',
+            color: '#e15163',
+            size: 0
+          }]
+        }]
+      }, {
+        name: 'Aggregators & Integrators',
+        color: '#f97245',
+        children: [{
+          name: 'Aggregators & Integrators',
+          color: '#f97245',
+          children: [{
+            name: 'No Commons',
+            color: '#ffd8c8',
+            size: 0
+            }, {
+            name: 'Some Commons',
+            color: '#ffb79a',
+            size: 11
+            }, {
+            name: 'Most Commons',
+            color: '#ff966f',
+            children: [{
+              name: 'Services & Software & Data',
+              color: '#ff966f',
+              size: 1
+            }]
+            }, {
+            name: 'All Commons',
+            color: '#f97245',
+            children: [{
+              name: 'Services & Data',
+              color: '#f97245',
+              size: 1
+            }]
+          }]
+        }]
+      }, {
+        name: 'Other',
+        color: '#fa9d1c',
+        children: [{
+          name: 'Other',
+          color: '#fa9d1c',
+        children: [{
+          name: 'No Commons',
+            color: '#fdddbf',
+            size: 1
+            }, {
+            name: 'Some Commons, 0',
+            color: '#ffc78d',
+            size: 0
+            }, {
+            name: 'Most Commons',
+            color: '#ffb25b',
+            size: 0
+            }, {
+            name: 'All Commons',
+            color: '#fa9d1c',
+            size: 0
+            }]
+        }]
+      }]
+    };
+
+    Sunburst()
+      .data(data)
+      .size('size')
+      .color('color')
+      .radiusScaleExponent(0.75)
+      .labelOrientation('angular')
+      .excludeRoot('true')
+      .centerRadius('0.25')
+      .tooltipContent((d, node) => `Size: <i>${node.value}</i>`)
+      (document.getElementById('chart'));
+  </script>
+</body>
