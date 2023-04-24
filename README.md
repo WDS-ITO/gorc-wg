@@ -16,7 +16,7 @@ Current visualizations:
 <li><a href="https://wds-ito.github.io/gorc-wg.github.io//python/TypesOfCommons/">3D representation of the types of commons that have participated in the speaker series.</a></li>
 </ul>
 
-All of the visualizations are <a href="https://docs.google.com/document/d/10_mUtJfGFOaUSSoEhs8JfnYk9DWOc0jQSW8l60-HYUE/edit?usp=sharing">open to feedback and suggestions</a>!
+All of the visualizations are <a href="https://docs.google.com/document/d/10_mUtJfGFOaUSSoEhs8JfnYk9DWOc0jQSW8l60-HYUE/edit?usp=sharing">open to feedback and suggestions</a>! There is also a <a href="https://drive.google.com/file/d/1sy9pe5luZHjdVmsNmx0ry5n7Ek-mkUWl/view?usp=share_link">video walkthrough</a> of the visualizations as they were in February 2023.
 
 Related resources:
 <ul>
