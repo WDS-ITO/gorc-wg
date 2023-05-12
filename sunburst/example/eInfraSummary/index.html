@@ -86,7 +86,7 @@
           }, {
             name: 'Some Commons',
             color: '#92a1c4',
-            size: 8
+            size: 9
           }, {
             name: 'Most Commons',
             color: '#52658c',
@@ -226,11 +226,19 @@
             }, {
             name: 'Some Commons',
             color: '#b2a2ce',
-            size: 7
+            size: 5
             }, {
             name: 'Most Commons',
             color: '#7d6b9e',
-            size: 0
+            children: [{
+              name: 'Discovery',
+              color: '#7d6b9e',
+              size: 1
+            }, {
+              name: 'Publication',
+              color: '#7d6b9e',
+              size: 1
+            }]
             }, {
             name: 'All Commons',
             color: '#493971',
@@ -270,11 +278,15 @@
             }, {
             name: 'Some Commons',
             color: '#b2a2ce',
-            size: 8
+            size: 7
             }, {
             name: 'Most Commons',
             color: '#7d6b9e',
-            size: 0
+            children: [{
+              name: 'Collaboration',
+              color: '#7d6b9e',
+              size: 1
+            }]
             }, {
             name: 'All Commons',
             color: '#493971',
@@ -334,7 +346,7 @@
             }, {
             name: 'Some Commons',
             color: '#d2a3cc',
-            size: 9
+            size: 8
             }, {
             name: 'Most Commons',
             color: '#aa70a3',
@@ -356,6 +368,10 @@
               size: 1
               }, {
               name: 'Preservation',
+              color: '#aa70a3',
+              size: 1
+              }, {
+              name: 'Maintenaince',
               color: '#aa70a3',
               size: 1
             }]
@@ -386,23 +402,27 @@
             }, {
             name: 'Some Commons',
             color: '#d2a3cc',
-            size: 7
+            size: 6
             }, {
             name: 'Most Commons',
             color: '#aa70a3',
             children: [{
+              name: 'Visualization',
+              color: '#aa70a3',
+              size: 1
+            }, {
               name: 'Image/Data analysis',
+              color: '#aa70a3',
+              size: 1
+            }, {
+              name: 'Workflows',
               color: '#aa70a3',
               size: 1
             }]
             }, {
             name: 'All Commons',
             color: '#823e7c',
-            children: [{
-              name: 'Workflows',
-              color: '#823e7c',
-              size: 1
-            }]
+            size: 0
           }]
           }, {
           name: 'Measurement and Materials',
@@ -462,11 +482,15 @@
             }, {
             name: 'Some Commons',
             color: '#e8a5c0',
-            size: 7
+            size: 6
             }, {
             name: 'Most Commons',
             color: '#d1749b',
             children: [{
+              name: 'Helpdesk',
+              color: '#d1749b',
+              size: 1
+            }, {
               name: 'Monitoring',
               color: '#d1749b',
               size: 1
@@ -498,11 +522,15 @@
             }, {
             name: 'Some Commons',
             color: '#f9abae',
-            size: 4
+            size: 3
             }, {
             name: 'Most Commons',
             color: '#ef8088',
             children: [{
+              name: 'Open Registration Courses',
+              color: '#ef8088',
+              size: 1
+            }, {
               name: 'Online Courses',
               color: '#ef8088',
               size: 1
@@ -522,7 +550,7 @@
           children: [{
             name: 'No Commons',
             color: '#ffd5d6',
-            size: 3
+            size: 2
             }, {
             name: 'Some Commons',
             color: '#f9abae',
@@ -530,7 +558,11 @@
             }, {
             name: 'Most Commons',
             color: '#ef8088',
-            size: 0
+            children: [{
+              name: 'Consulting',
+              color: '#ef8088',
+              size: 1
+            }]
             }, {
             name: 'All Commons',
             color: '#e15163',
@@ -550,27 +582,27 @@
             }, {
             name: 'Some Commons',
             color: '#ffb79a',
-            size: 10
+            size: 1
             }, {
             name: 'Most Commons',
             color: '#ff966f',
             children: [{
-              name: 'services & Data',
+              name: 'Services',
               color:'#ff966f',
               size:1
             },{
-              name: 'Software & Data',
-              color: '#ff966f',
-              size: 1
-            },{
-              name: 'Services & Software & Data',
+              name: 'Software',
               color: '#ff966f',
               size: 1
             }]
             }, {
             name: 'All Commons',
             color: '#f97245',
-            size: 0
+            children: [{
+              name: 'Data',
+              color: '#ff966f',
+              size: 1
+            }]
           }]
         }]
       }, {
