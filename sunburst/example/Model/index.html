@@ -31,7 +31,7 @@
 
   <script>
    const color = d3.scaleOrdinal(d3.schemePaired);
-   fetch('flare.json').then(res => res.json()).then(data => {
+   fetch('GORC-WG_Model_V1.0.json').then(res => res.json()).then(data => {
     Sunburst()
       .data(data)
       .size('size')
