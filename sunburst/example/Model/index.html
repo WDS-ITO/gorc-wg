@@ -30,13 +30,13 @@
   </figure>
 
   <script>
-   const color = d3.scaleOrdinal(d3.schemePaired);
+   const color = "red";
     
-   fetch('GORC-WG_Model_V1.0.json').then(res => res.json()).then(data => {
+   fetch('GORC-WG_Model_V1.json').then(res => res.json()).then(data => {
     Sunburst()
       .data(data)
       .size('size')
-      .color(d, parent) => color(parent ? parent.data.name : null))
+      .color('color')
       .radiusScaleExponent(0.75)
       .labelOrientation('angular')
       .excludeRoot('true')
