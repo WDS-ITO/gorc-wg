@@ -3,7 +3,7 @@
   <meta http-equiv='expires' content='0'> 
   <meta http-equiv='pragma' content='no-cache'>
   
-  <script src="../sunburst-chart.min.js"></script>
+  <script src="//unpkg.com/sunburst-chart"></script>
 
   <style>body { margin: 0 }</style>
   <style>
@@ -31,17 +31,18 @@
 
   <script>
    const color = d3.scaleOrdinal(d3.schemePaired);
+    
    fetch('GORC-WG_Model_V1.0.json').then(res => res.json()).then(data => {
     Sunburst()
       .data(data)
       .size('size')
-      .color('color')
+      .color(d, parent) => color(parent ? parent.data.name : null))
       .radiusScaleExponent(0.75)
       .labelOrientation('angular')
       .excludeRoot('true')
       .centerRadius('0.25')
       .tooltipContent((d, node) => `Size: <i>${node.value}</i>`)
       (document.getElementById('chart'));
-   });
+   });    
   </script>
 </body>
