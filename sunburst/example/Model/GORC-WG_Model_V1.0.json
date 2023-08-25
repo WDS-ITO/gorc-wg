@@ -1,0 +1,106 @@
+{
+ "name": "Essential Elements",
+ "children": [
+  {
+   "name": "Governance & Leadership",
+   "value": 10
+  },
+  {
+   "name": "Rules of Participation & Access",
+   "value": 10
+  },
+  {
+   "name": "Sustainability",
+   "value": 10
+  },
+  {
+   "name": "Engagement",
+   "value": 10
+  },
+  {
+   "name": "Human Capacity",
+   "value": 10
+  },
+  {
+   "name": "Interoperability",
+   "value": 10
+  },
+  {
+   "name": "Standards & Conventions",
+   "value": 10
+  },
+  {
+   "name": "ICT Infrastructure",
+   "value": 10
+  },
+  {
+   "name": "Services & Tools",
+   "value": 10
+  },
+  {
+   "name": "Research Objects",
+   "children": 
+   [
+    {"name": "Definition",
+     "children": 
+     [
+      {
+       "name": "Any input or output of any and all stages of the research process. For this version of the model (V1.0), we only consider Research Objects* that are Digital Objects*, as we have confined the model to digital and e-infrastructures.",
+       "value": 10
+      }
+     ]
+    },
+    {"name": "Attributes",
+      "children": 
+      [
+      {"name": "Considerations for the displayed, User*-facing accessibility and reusability of Research Objects* held by and discoverable through the research commons*.",
+       "children": 
+       [
+       {"name": "Extended Description",
+        "children": [
+        {"name": "i.e. in addition to any Research Object*-level specific standards* and quality assurance checks that occur at acquisition.",
+         "value": 10
+        }
+        ]
+       },
+       {"name": "Consideration Level",
+        "children": [
+       {"name": "Mandatory",
+        "value": 10
+       }
+        ]
+       },
+       {"name": "Primary Source(s)",
+        "children": [
+        {"name": "Phase 1 workshop",
+         "value": 10
+        }
+        ]
+        }
+       ]
+       }
+       ]
+    },
+    {
+      "name": "Categories",
+      "children":
+      [
+        {
+          "name": "Publications and Research Documentation",
+          "children":
+          [
+            {"name": "Extended Description",
+             "children": [
+             {"name": "Any digital, textual, visual, audio, or tactile representations that describe or discuss any aspect of the research project and activities in human or machine readable formats.",
+              "value": 10
+             }
+             ]
+            }
+          ]
+        }
+      ]
+    }
+    ]
+  }
+  ]
+}
