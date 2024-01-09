@@ -26,7 +26,7 @@
 <body>
   <figure>
     <div id="chart"></div>
-    <figcaption> An interactive summary of eInfra designations (or <a href="https://wiki.eoscfuture.eu/display/PUBLIC/B.+v4.00+EOSC+Resource+Profile">EOSC Resource categories</a>), showcasing which subcategories, categories, and supercategories the commons in the <a href="https://www.rd-alliance.org/groups/gorc-international-model-wg">RDA GORC-WG</a> speakers series identified with in broad strokes. The centre ring shows the eInfra supercategories, then categories, then groupings by commons identification. These groupings are by subcategories that do not describe any of the speaker series commons (0%), that describe some of the speaker series commons (greater than 0% and less than or equal to 50%), that describe most of the speaker series commons (greater than 50% but less than 100%), or all of the speaker series commons (100%). Subcategories that describe most or all of the speaker series commons are explicitly shown in the outmost layer. Clicking any segment of the graphic will recentre it on that segment, allowing full exploration of how commons identified with the EOSC Resource categories. </figcaption>
+    <figcaption> An interactive summary of eInfra designations (or <a href="https://wiki.eoscfuture.eu/display/PUBLIC/B.+v4.00+EOSC+Resource+Profile">EOSC Resource categories</a>), showcasing which subcategories, categories, and supercategories the commons in the <a href="https://www.rd-alliance.org/groups/gorc-international-model-wg">RDA GORC-WG</a> speakers series identified with in broad strokes. The centre ring shows the eInfra supercategories, then categories, then groupings by commons identification. These groupings are by subcategories that do not describe any of the speaker series commons (0%), that describe some of the speaker series commons (greater than 0% and less than or equal to 50%), that describe most of the speaker series commons (greater than 50% but less than 100%), or all of the speaker series commons (100%). Subcategories that describe most or all of the speaker series commons are explicitly shown in the outmost layer. Clicking any segment of the graphic will recentre it on that segment, allowing full exploration of how commons identified with the EOSC Resource categories. The data shown in this figure is also held in <a href="https://docs.google.com/spreadsheets/d/1CCzVYR63UgC4S2IXZlRJR27KvGwrV7sRvdR5eAihaDU/edit?usp=sharing"> this Google Sheet.</a> Please contact CJ Woodford at ito-ra1@oceannetworks.ca with any questions or concerns. </figcaption>
   </figure>
 
   <script>
@@ -42,11 +42,11 @@
           children: [{
             name: 'No Commons',
             color: '#d5e2ff',
-            size: 1
+            size: 0
           }, {
             name: 'Some Commons',
             color: '#92a1c4',
-            size: 11
+            size: 12
           }, {
             name: 'Most Commons',
             color: '#52658c',
@@ -86,11 +86,15 @@
           }, {
             name: 'Some Commons',
             color: '#92a1c4',
-            size: 9
+            size: 7
           }, {
             name: 'Most Commons',
             color: '#52658c',
-            size: 0
+            children: [{
+              name: 'Direct Connect',
+              color: '#52658c',
+              size: 1
+            }]
           }, {
             name: 'All Commons',
             color: '#0f2f57',
@@ -106,7 +110,7 @@
           }, {
             name: 'Some Commons',
             color: '#92a1c4',
-            size: 5
+            size: 4
           }, {
             name: 'Most Commons',
             color: '#52658c',
@@ -116,6 +120,10 @@
               size: 1
             }, {
               name: 'Orchestration',
+              color: '#52658c',
+              size: 1
+            },{
+              name: 'Virtual Machine Management',
               color: '#52658c',
               size: 1
             }]
@@ -226,16 +234,12 @@
             }, {
             name: 'Some Commons',
             color: '#b2a2ce',
-            size: 5
+            size: 6
             }, {
             name: 'Most Commons',
             color: '#7d6b9e',
             children: [{
               name: 'Discovery',
-              color: '#7d6b9e',
-              size: 1
-            }, {
-              name: 'Publication',
               color: '#7d6b9e',
               size: 1
             }]
@@ -283,7 +287,7 @@
             name: 'Most Commons',
             color: '#7d6b9e',
             children: [{
-              name: 'Collaboration',
+              name: 'Education',
               color: '#7d6b9e',
               size: 1
             }]
@@ -402,16 +406,12 @@
             }, {
             name: 'Some Commons',
             color: '#d2a3cc',
-            size: 6
+            size: 7
             }, {
             name: 'Most Commons',
             color: '#aa70a3',
             children: [{
               name: 'Visualization',
-              color: '#aa70a3',
-              size: 1
-            }, {
-              name: 'Image/Data analysis',
               color: '#aa70a3',
               size: 1
             }, {
@@ -458,11 +458,15 @@
             }, {
             name: 'Some Commons',
             color: '#e8a5c0',
-            size: 9
+            size: 8
             }, {
             name: 'Most Commons',
             color: '#d1749b',
             children: [{
+              name: 'User Authentication',
+              color: '#d1749b',
+              size: 1
+            }, {
               name: 'Identity & Access management',
               color: '#d1749b',
               size: 1
@@ -482,24 +486,12 @@
             }, {
             name: 'Some Commons',
             color: '#e8a5c0',
-            size: 6
+            size: 9
             }, {
             name: 'Most Commons',
             color: '#d1749b',
             children: [{
-              name: 'Helpdesk',
-              color: '#d1749b',
-              size: 1
-            }, {
               name: 'Monitoring',
-              color: '#d1749b',
-              size: 1
-            }, {
-              name: 'Configuration',
-              color: '#d1749b',
-              size: 1
-            }, {
-              name: 'Coordination',
               color: '#d1749b',
               size: 1
             }]
@@ -522,16 +514,12 @@
             }, {
             name: 'Some Commons',
             color: '#f9abae',
-            size: 3
+            size: 4
             }, {
             name: 'Most Commons',
             color: '#ef8088',
             children: [{
-              name: 'Open Registration Courses',
-              color: '#ef8088',
-              size: 1
-            }, {
-              name: 'Online Courses',
+              name: 'Online Courses,
               color: '#ef8088',
               size: 1
             }, {
@@ -554,15 +542,11 @@
             }, {
             name: 'Some Commons',
             color: '#f9abae',
-            size: 13
+            size: 14
             }, {
             name: 'Most Commons',
             color: '#ef8088',
-            children: [{
-              name: 'Consulting',
-              color: '#ef8088',
-              size: 1
-            }]
+            size: 0
             }, {
             name: 'All Commons',
             color: '#e15163',
